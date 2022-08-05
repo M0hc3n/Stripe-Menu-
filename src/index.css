@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Inter', sans-serif;
+}
+
+li{
+    /* display: inline; */
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/* Navbar section */
+.nav-bar{
+    height: 70px;
+    width: 100%;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: transparent;
+}
+
+.nav-bar .logo{
+    height: 50px;
+    width: 100px;
+    background-image: url(./images/logo-removebg-preview.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 5px;
+    margin-left: 9px;
+    cursor: pointer;
+}
+
+.nav-bar .hamburger{
+    height: 45px;
+    width: 45px;
+    display: flex;
+    margin-right: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+    background-color: black;
+    border-radius: 10px;
+    margin-top: 5px;
+    transition: .3s ease background-color;
+}
+
+.nav-bar .hamburger:hover{
+    background-color: rgb(67, 67, 67);
+}
+  
+.nav-bar .hamburger .bar{
+    height: 3px;
+    width: 27px;
+    background-color: white;
+    position: relative;
+    border-radius: 2px;
+}
+  
+.nav-bar .hamburger .bar::after,
+.nav-bar .hamburger .bar::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    border-radius: 2px; 
+}
+  
+.nav-bar .hamburger .bar::after{
+    top: 8px;
+}
+  
+.nav-bar .hamburger .bar::before{
+    top: -8px;
+}
+
+.nav-bar .hero-btn{
+    display: none;
+}
+
+.nav-bar ul{
+    display: none;
+}
+
+/* end of Navbar section */
+
+
+/* hero section */
+.hero-container{
+    height: 100vh;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 1rem 2rem;
+    background-image: url(./images/background-img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-container .left{
+    width: 100%;
+}
+
+.hero-container .right{
+    display: none;
+}
+
+.hero-container .hero-title{
+    font-size: 3rem;
+    margin-top: 5rem;
+    font-weight: bold;
+    letter-spacing: .2rem;
+}
+
+.hero-container .hero-info{
+    width: calc(100% - 150px);
+    font-weight: light;
+    margin-top: 2rem;
+    letter-spacing: .1rem;
+    line-height: 25px;
+    color: gray;
+}
+
+.hero-btn{
+    height: 40px;
+    width: 150px;
+    margin-top: 2rem;
+    border: none;
+    border-radius: 15px;
+    background-color: black;
+    color: white;
+    transition: .3s ease background-color;
+    cursor: pointer;
+}
+
+.hero-btn:hover{
+    background-color: rgb(74, 74, 74);
+}
+
+/* end of hero section */
+
+/* sidebar section */
+
+.submenu{
+    display: none;
+}
+
+.sidebar-container{
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    transition: .3s ease-out all;
+}
+
+.sidebar-container.show{
+    visibility: visible;
+}
+
+.sidebar-container .sidebar{
+    height: 90%;
+    width: 90%;
+    background-color: white;
+    border-radius: 20px;
+    padding: 2rem;
+}
+
+.cancel-icon{
+    position: absolute;
+    top: 7%;
+    left: 89%;
+    color: rgba(0, 0, 0, 0.632);
+    cursor: pointer;
+    font-size: 1.7rem;
+    transition: .6s ease color;
+}
+
+.cancel-icon:hover{
+    color: black;
+}
+
+.sublink-title{
+    margin-top: 30px;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    font-weight: light;
+    letter-spacing: .1rem;
+}
+
+.inner-ul li{
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    margin-top: 10px;
+    color: rgb(116, 116, 116);
+    transition: .3s ease color;
+}
+
+.inner-ul li a:hover{
+    color: black;
+}
+
+.inner-ul li a{
+    color: rgb(116, 116, 116);
+    margin-left: 10px;
+}
+
+
+/* end of sidebar section */
+
+
+/* Media queries */
+@media screen and (min-width: 800px){
+    .hero-container .left{
+        width: 60%;
+        margin-top: 30px;
+    }
+    
+    .hero-container .right{
+        width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-container .right .right-img{
+        height: 80%;
+        width: 80%;
+        background-image: url(./images/phone.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        margin-top: 20px;
+    }
+
+    .nav-bar .hamburger{
+        display: none;
+    }
+
+    .nav-bar .hero-btn{
+        display: inline;
+        margin-top: 5px;
+        width: 100px;
+        margin-right: 10px;
+    }
+
+    .nav-bar ul{
+        width: 400px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .nav-bar ul li{
+        display: inline;
+        font-size: 1.2rem;
+        text-transform: capitalize;
+    }
+
+    .nav-bar ul li a{
+        color: gray;
+        transition: .5s ease color;
+    }
+
+    .nav-bar ul li:hover a{
+        color: black;
+    }
+
+    .submenu {
+        background: white;
+        position: absolute;
+        top: 4rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: none;
+        padding: 2rem;
+        border-radius: 10px;
+        transition: all 0.3s linear;
+        width: fit-content;
+        z-index: 3;
+    }
+    .submenu::before {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid white;
+        position: absolute;
+        top: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+      
+    .submenu.show {
+        display: block;
+    }
+
+    .submenu .sublink-title{
+        margin-top: -10px;
+    }
+    
+    .submenu .inner-ul{
+        margin-top: 10px;
+    }
+
+    .submenu .inner-ul li{
+        display: inline;
+        margin-right: 30px;
+    }
+
+    .submenu .inner-ul li a{
+        margin-left: 3px;
+    }
+    
+}
+
+/* end of Media queries */
+
