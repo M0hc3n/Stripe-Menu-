@@ -17,9 +17,9 @@ function Submenu() {
         <h4 className='sublink-title'>{toBeDisplayed.page}</h4>
         <ul className="inner-ul">
                     {
-                      toBeDisplayed.links.map( link =>{
+                      toBeDisplayed.links.map( (link , index) =>{
                         return (
-                          <li>
+                          <li key={index}>
                             {link.icon}
                             <a href={link.url}>{link.label}</a>
                           </li>

@@ -14,15 +14,15 @@ function Sidebar() {
         </div>
         <ul className='outer-ul'>
           {
-            sublinks.map( sublink => {
+            sublinks.map( (sublink, index) => {
               return (
-                <li>
+                <li key={index}>
                   <h4 className='sublink-title'>{sublink.page}</h4>
                   <ul className="inner-ul">
                     {
-                      sublink.links.map( link =>{
+                      sublink.links.map( (link , index) =>{
                         return (
-                          <li>
+                          <li key={index}>
                             {link.icon}
                             <a href={link.url}>{link.label}</a>
                           </li>

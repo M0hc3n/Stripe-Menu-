@@ -28,9 +28,9 @@ function Navbar() {
       <div className="logo">
       </div>
       <ul>
-        {sublinks.map( sublink=>{
+        {sublinks.map( (sublink, index)=>{
           return (
-            <li>
+            <li key={index}>
               <a href="#" className="link-btn" onMouseOver={handleSubmenu}>{sublink.page}</a>
             </li>
           )
